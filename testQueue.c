@@ -1,16 +1,15 @@
 // File: testQ.c
-// Purpose: To test the functionality of the Q
-// Written by: Deepak Kumar
-// Date: April 2018
+// Purpose: Main program to test functionary of Queue.
+// Authors: Deepak Kumar, Tessa Pham
+// Date: 04/22/2018
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "Queue.h"
 
 int main(void) {
-
    Queue *Q;
-   Q = newQueue();	// Create a queue
+   Q = newQueue();
 
    // test size() and empty()
    printf("Q Size = %d\n", sizeQ(Q));
@@ -19,7 +18,7 @@ int main(void) {
    else
       printf("The queue is not empty.\n");
 
-   // Add some random ints to queue (using insert())
+   // add some random ints to queue using insert()
    int *n;
    printf("Adding: ");
    for (int i=0; i < 10; i++) {
@@ -37,7 +36,7 @@ int main(void) {
    else
       printf("The queue is not empty.\n");
 
-   // Remove some entries from queue (using remove())
+   // remove some entries from queue using remove()
    for (int i = 0; i < 8; i++) {
       n = removeQ(Q);
       printf("Removed: %d\n", *n);
@@ -51,4 +50,4 @@ int main(void) {
       printf("the queue is not empty.\n");
   
    return 0;
-} // main()
+}

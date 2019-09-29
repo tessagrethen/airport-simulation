@@ -16,7 +16,7 @@ char *genCustId() {
 	char *id = malloc(5 * sizeof(char));
 	sprintf(id, "C%d", count);
 	return id;
-} // genCustId()
+}
 
 Customer *newCustomer (int at) {
 	Customer *c = malloc(sizeof(Customer));
@@ -49,5 +49,3 @@ char *custToString(const Customer *c) {
 
 	return result;
 }
-
-//--------------------------------------------------------------------------------

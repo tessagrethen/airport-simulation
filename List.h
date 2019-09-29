@@ -9,21 +9,18 @@ typedef struct {
    struct node *tail;
 } List;
 
-List *newList();			// Creates a new empty list
-int size(const List *l);		// Returns the size of list-l
-int empty(const List *l);		// is the list-l empty?
-void clear(List *l);		// removes all items from list-l
-void add(List *l, void *item);	// Add item at end of list-l
-void addAt(List *l, int index, void *item);	// Add item at index in list-l
-void *get(const List *L, int index);	// Returns item at index in list-l
-void* set(List *l, int index, void *item);// Change value at index to item, return
-					// replaced item
-void* removeItem(List *l, int index);	// Remove item at index and return it
+List *newList();
+int size(const List *l);
+int empty(const List *l);
+void clear(List *l);
+void add(List *l, void *item);
+void addAt(List *l, int index, void *item);
+void *get(const List *L, int index);
+void* set(List *l, int index, void *item);
+void* removeItem(List *l, int index);
 void *contains(const List *l, void *item, int (*comp)(const void *, const void *));
-// Does list-l have item? Use compare() to check
 
-void print(const List *l);	// prints contents of list (test only)
-
+void print(const List *l);
 
 struct ListIterator *newIterator(List *l);
 int hasNext(struct ListIterator *it);

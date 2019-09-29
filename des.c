@@ -6,7 +6,8 @@
 #include "Kiosk.h"
 #include "Customer.h"
 
-int arrivals();	// Returns the number of customers that arrived (any value between 0 - 3).
+// return the number of customers that arrived (any value between 0-3)
+int arrivals();
 void simulate(int m, int k);
 
 int main(int argc, char *argv[]) {
@@ -31,7 +32,7 @@ int arrivals() {
 void simulate(int m, int nk) {
 	Kiosk *kiosks[nk];
 
-	// Creates nk kiosks.
+	// create nk kiosks
 	for (int i = 0; i < nk; i++) {
 		kiosks[i] = newKiosk();
 	}
@@ -45,18 +46,18 @@ void simulate(int m, int nk) {
 
 	printf("]\n");
 
-	// Creates a queue of customers.
+	// create a queue of customers
 	Queue *checkInQueue;
 	checkInQueue = newQueue();
 
-	int nc = 0;	// Total customers arrived.
+	int nc = 0;	// total # customers arrived
 
-	// For each minute...
+	// for each minute
 	for (int t = 1; t <= m; t++) {
-		// n customers arrive.
+		// n Customers arrive
 		int n = arrivals();
 
-		// Creates and adds each customer to the queue.
+		// create and add each customer to queue
 		for (int i = 1; i < n; i++) {
 			Customer *c = newCustomer(t);
 			insertQ(checkInQueue, c);
@@ -65,7 +66,7 @@ void simulate(int m, int nk) {
 
 		printf("At time %d, there are %d customers on queue.\n", t, sizeQ(checkInQueue));
 
-		// Checks for idle kiosks.
+		// check for idle kiosks
 		for (int k = 0; k < nk; k++) {
 			if (!busy(kiosks[k]) && !emptyQ(checkInQueue)) {
 				Customer *c = removeQ(checkInQueue);
@@ -73,7 +74,7 @@ void simulate(int m, int nk) {
 			}
 		}
 		
-		// Prints out status of all kiosks.
+		// print status of all kiosks
 		printf("[ ");
 
 		for (int i = 0; i < nk; i++) {
@@ -82,7 +83,4 @@ void simulate(int m, int nk) {
 
 		printf("]\n");
 	}
-
 }
-
-//--------------------------------------------------------------------------------

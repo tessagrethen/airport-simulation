@@ -29,5 +29,3 @@ void insertQ(Queue *q, void *item) {
 void *removeQ(Queue *q) {
 	return removeItem(q->L, 0);
 }
-
-//--------------------------------------------------------------------------------

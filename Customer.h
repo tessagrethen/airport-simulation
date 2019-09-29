@@ -14,14 +14,10 @@ typedef struct {
 
 Customer * newCustomer(int time);
 
-// Accessors
 char *getCustId(const Customer *c);
 int getArrivalTime(const Customer *c);
 int getServiceTime(const Customer *c);
 
-// Print Form
 char *custToString(const Customer *c);
 
 #endif
-
-//--------------------------------------------------------------------------------

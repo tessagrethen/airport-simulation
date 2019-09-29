@@ -54,7 +54,8 @@ int busy(const Kiosk *k) {
 	return k->nowServing != NULL;
 }
 
-int getNServed() {	// returns total# Customers served so far in simulation
+int getNServed() {
+	// total # customers served so far in simulation
 	return nServed;
 } 
 
@@ -65,5 +66,3 @@ char *kioskToString(const Kiosk *k) {
 
 	return result;
 }
-
-//--------------------------------------------------------------------------------

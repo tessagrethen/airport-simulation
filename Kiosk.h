@@ -16,7 +16,6 @@ typedef struct {
 
 Kiosk *newKiosk();
 
-// Accessors
 char *getKioskId(const Kiosk *k);
 Customer *getCustomer(const Kiosk *k);
 
@@ -27,5 +26,3 @@ int getNServed();
 char *kioskToString(const Kiosk *k);
 
 #endif
-
-//--------------------------------------------------------------------------------
